@@ -1,22 +1,28 @@
 <template>
   <div>
-    <h4>Cat Breeds</h4>
-
-    <select v-model="selected">
-      <option
-        v-for="(breed, index) in breeds"
-        v-bind:value="breed"
-        :key="index"
-        @select="filter = breed"
-        >{{ breed.type }}</option
-      >
-    </select>
-    <!-- <ul v-for="(breed, index) in breeds" :item="breed" :key="index"> -->
-    <div>
-      <p v-if="selected.id">{{ selected.type }}</p>
-      <img v-if="selected.id" v-bind:src="selected.image" />
-      <p v-if="selected.id">{{ selected.description }}</p>
+    <div class="grid-x grid-margin-x">
+      <div class="cell small-4 large-offset-2">
+        <select v-model="selected">
+          <option
+            v-for="(breed, index) in breeds"
+            v-bind:value="breed"
+            :key="index"
+            @select="filter = breed"
+          >{{ breed.type }}</option>
+        </select>
+      </div>
+      <div v-if="selected.id" class="cell small-4">
+        <div class="card">
+          <img v-if="selected.id" v-bind:src="selected.image" />
+          <div class="card-section">
+            <!-- <p v-if="selected.id">{{ selected.type }}</p> -->
+            <p v-if="selected.id">{{ selected.description }}</p>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- <ul v-for="(breed, index) in breeds" :item="breed" :key="index"> -->
+
     <!-- </ul> -->
   </div>
 </template>
@@ -31,7 +37,7 @@ export default {
           id: 1,
           type: 'Abyssinian',
           image:
-            'https://upload.wikimedia.org/wikipedia/commons/4/48/Abyssinian_Cat_Portrait.Idsfa.jpg',
+            'https://upload.wikimedia.org/wikipedia/commons/c/ca/Poktori-1.jpg',
           description:
             'The Abyssinian is a slender, fine-boned, medium-sized cat. The head is moderately wedge shaped, with a slight break at the muzzle, and nose and chin ideally forming a straight vertical line when viewed in profile. They have alert, relatively large pointed ears. The eyes are almond shaped and are gold, green, hazel or copper depending on coat color. The legs tend to be long in proportion to a graceful body, with small oval paws; the tail is likewise long and tapering.',
           selected: 'Abyssinian'

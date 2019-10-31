@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an breeds page</h1>
+    <h2>Which Breed of Cat is Right for You?</h2>
     <CatType />
   </div>
 </template>
