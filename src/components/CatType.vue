@@ -8,7 +8,8 @@
         v-bind:value="breed"
         :key="index"
         @select="filter = breed"
-      >{{ breed.type }}</option>
+        >{{ breed.type }}</option
+      >
     </select>
     <!-- <ul v-for="(breed, index) in breeds" :item="breed" :key="index"> -->
     <div>
@@ -268,6 +269,276 @@ export default {
           description:
             'The Japanese Bobtail is a breed of domestic cat with an unusual bobtail more closely resembling the tail of a rabbit than that of other cats. The variety is native to Japan and Southeast Asia, though it is now found throughout the world. The breed has been known in Japan for centuries, and it frequently appears in traditional folklore and art. Recent scientific studies on cat genetics led by researchers has indicated that the Japanese Bobtail breed ranks amongst one of the most genetically diverse of pedigree breeds.',
           selected: 'Japanese Bobtail'
+        },
+        {
+          id: 27,
+          type: 'Javanese',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/6/6f/Javanese_cat.jpg',
+          description:
+            'The Javanese, also known as the Colorpoint (or Colourpoint) Longhair in some registries (though that name has other meanings), is a variety of purebred domestic cat. It is an Oriental-type, the long-haired equivalent of the Colorpoint Shorthair. The variety was developed in North America; its name is derived from the tradition of naming Oriental-type cats after Southeast Asian places. It is an offshoot of the Balinese breed, out-crossed to Siamese and Colorpoint Shorthair, and often having coat patterns not acceptable in those breeds. Individuals may or may not be have point coloration.',
+          selected: 'Javanese'
+        },
+        {
+          id: 28,
+          type: 'Korat',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/c/c1/Veda%2Cchat-adulte-m%C3%A2le-race-korat.JPG',
+          description:
+            "The Korat  is a silver-tipped blue-grey, short-haired breed of domestic cat with a small to medium build and a low percentage of body fat. Its body is semi-cobby, and unusually heavy for its size. It is an intelligent and playful active cat that forms strong bonds with people. Among the Korat's distinguishing characteristics are its heart-shaped head and large green eyes.",
+          selected: 'Korat'
+        },
+        {
+          id: 29,
+          type: 'LaPerm',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/5/5a/Laperm_LH_sealpoint.jpg',
+          description:
+            'he LaPerm is a breed of cat. A LaPerm\'s fur is curly (hence the name "perm"), with the tightest curls being on the belly, throat and base of the ears. LaPerms come in many colors and patterns. LaPerms generally have a very affectionate personality. They have an elegant and athletic build and are affectionate, active and outgoing in character. They are reputed to be hypoallergenic cats, provoking a significantly lower level of allergic response in humans than normal cats. Their most significant feature is their coat, which is made up of soft waves, curls and ringlets, resembling a shaggy perm.',
+          selected: 'LaPerm'
+        },
+        {
+          id: 30,
+          type: 'Maine Coon',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/5/5a/Maine_Coon_cat_by_Tomitheos.JPG',
+          description:
+            'The Maine Coon is the largest domesticated cat breed. It has a distinctive physical appearance and valuable hunting skills. It is one of the oldest natural breeds in North America, specifically native to the state of Maine, where it is the official state cat. The Maine Coon is a large and sociable cat, hence its nickname, "the gentle giant." It is characterized by a prominent ruff along its chest, robust bone structure, rectangular body shape, an uneven two layered coat with longer guard hairs over a silky satin undercoat, and a long, bushy tail.',
+          selected: 'Maine Coon'
+        },
+        {
+          id: 31,
+          type: 'Manx Cat',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/4/41/A_Rumpy_Manx_Cat.jpg',
+          description:
+            'The Manx cat is a breed of domestic cat originating on the Isle of Man, with a naturally occurring mutation that shortens the tail. Many Manx have a small stub of a tail, but Manx cats are best known as being entirely tailless; this is the most distinguishing characteristic of the breed, along with elongated hind legs and a rounded head. Manx cats come in all coat colours and patterns, though all-white specimens are rare, and the coat range of the original stock was more limited.',
+          selected: 'Manx Cat'
+        },
+        {
+          id: 32,
+          type: 'Munchkin Cat',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/b/b8/Munchkin_Aliska_Karapuz.jpg',
+          description:
+            'The Munchkin cat or Sausage cat is a newer breed of cat characterized by its very short legs, which are caused by a genetic mutation. Much controversy erupted over the breed when it was recognized by The International Cat Association (TICA) in 1995 with critics voicing concern over potential health and mobility issues.',
+          selected: 'Munchkin Cat'
+        },
+        {
+          id: 33,
+          type: 'Norwegian Forest Cat',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/9/98/NorwegianForestCat.jpg',
+          description:
+            "The Norwegian Forest cat is a breed of domestic cat originating in Northern Europe. This natural breed is adapted to a very cold climate, with a top coat of glossy, long, water-shedding hairs and a woolly undercoat for insulation. Although this is uncertain, the breed's ancestors may have been a landrace of short-haired cats brought to Norway by the Vikings around 1000 AD, who may also have brought with them long-haired cats, like those ancestral to the modern Siberian and Turkish Angora breeds. ",
+          selected: 'Norwegian Forest Cat'
+        },
+        {
+          id: 34,
+          type: 'Ocicat',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/2/21/Ocicat-Charan.jpg',
+          description:
+            'The Ocicat is an all-domestic breed of cat which resembles a wild cat but has no recent wild DNA in its gene pool. The breed is unusual in that it is spotted like a wild cat but has the temperament of a domestic animal. It is named for its resemblance to the Ocelot. The breed was established from Siamese and Abyssinian stock; later, American Shorthairs (silver tabbies) were added to the mix and gave the breed their silver color, bone structure and distinct markings.',
+          selected: 'Ocicat'
+        },
+        {
+          id: 35,
+          type: 'Ojos Azules',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/0/0f/Gato_Siam%C3%A9s_ojos_azules.JPG',
+          description:
+            'Ojos Azules is a breed of domestic cat. Unlike the blue eyes seen linked to the genes in bicolor cats and cats with point coloration, both of which suppress pigmentation, this gene is not linked to any certain fur color or pattern, giving the opportunity to have cats with dark coats and blue eyes. The depth of color in the eyes is greater even than that seen in a Siamese (cat), and does not cause squinting, deafness or cross-eye.',
+          selected: 'Ojos Azules'
+        },
+        {
+          id: 36,
+          type: 'Oriental Longhair',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/6/65/OLH-GIP_Divan_Cesar.jpg',
+          description:
+            'Oriental Longhairs feature a long, tubular, Oriental-style body but with a longer silky coat. The range of possible coat colours includes everything from self-coloured (black, blue, chocolate, lilac, cinnamon, caramel, fawn, red, cream and apricot), tortoiseshell, smoke (silver undercoat), shaded or tipped, tabby or white. The eyes are almond shaped. The preferred eye color for Oriental Longhairs is green; except for the whites, which may have green or blue eyes, or be odd-eyed (two different colored eyes).',
+          selected: 'Oriental Longhair'
+        },
+        {
+          id: 37,
+          type: 'Oriental Shorthair',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/6/6a/Oriental_shorthair_20070130_caroline.jpg',
+          description:
+            "The Oriental Shorthair is a breed of domestic cat developed from and closely related to the Siamese. It maintains the modern Siamese head and body type but appears in a wide range of coat colors and patterns. Like the Siamese, Orientals have almond-shaped eyes, a triangular head shape, large ears, and an elongated, slender, and muscular body. Their personalities are also very similar. Orientals are social, intelligent, and many are rather vocal. They often remain playful into adulthood, with many enjoying playing fetch. Despite their slender appearance, they are athletic and can leap into high places. They prefer to live in pairs or groups and also seek human interaction. Unlike the breed's blue-eyed forebear, Orientals are usually green-eyed.",
+          selected: 'Oriental Shorthair'
+        },
+        {
+          id: 38,
+          type: 'Persian',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/1/15/White_Persian_Cat.jpg',
+          description:
+            'The Persian cat is a long-haired breed of cat characterized by its round face and short muzzle. It is also known as the "Persian Longhair" in the English-speaking countries. In the Middle East region, they are widely known as "Iranian cat" and in Iran they are known as "Shiraz cat". The first documented ancestors of the Persian were imported into Italy from Iran (historically known as Persia in the west) around 1620.',
+          selected: 'Persian'
+        },
+        {
+          id: 39,
+          type: 'Pixie-Bob',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/a/a5/Uptoyou_duFarWestwithBePacific2.jpg',
+          description:
+            'The Pixie-bob is a breed of domestic cat claimed to be the progeny of naturally occurring bobcat hybrids. However, DNA testing has failed to detect bobcat marker genes, and Pixie-bobs are considered wholly domestic for the purposes of ownership, cat fancy registration, and import and export',
+          selected: 'Pixie-Bob'
+        },
+        {
+          id: 40,
+          type: 'Ragamuffin',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/f/f3/20050922AmarilloRes.jpg',
+          description:
+            'Ragamuffins are a muscular, heavy breed of cat needing approximately four to five years to fully mature. The physical traits of the breed include a rectangular, broad-chested body with shoulders supporting a short neck. These cats are classified as having a "substantial" body type. Ragamuffins come in all coat colors and patterns, with a medium-length coat that increases in length toward the stomach. Although the coat is thick and plush, it does not readily mat or clump and is easy to care for.',
+          selected: 'Ragamuffin'
+        },
+        {
+          id: 41,
+          type: 'Ragdoll',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/a/a3/Ragdoll_cat.jpg',
+          description:
+            'The Ragdoll is a cat breed with a color point coat and blue eyes. They are large and muscular semi-longhair cat with a soft and silky coat. Developed by American breeder Ann Baker in the 1960s, they are best known for their docile and placid temperament and affectionate nature. The name "Ragdoll" is derived from the tendency of individuals from the original breeding stock to go limp and relaxed when picked up.',
+          selected: 'Ragdoll'
+        },
+        {
+          id: 42,
+          type: 'Russian Blue',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/3/3a/Russian_blue.jpg',
+          description:
+            "The Russian Blue is a cat breed that comes in colors varying from a light shimmering silver to a darker, slate grey. It is their short, dense coat which has been the hallmark of the Russian breed for more than a century. The dense coat stands out from the body. The Russian Blue is a naturally occurring breed that may have originated in the port of Arkhangel'sk in Russia. They are also sometimes called Archangel Blues. It is believed that sailors took Russian Blues from the Archangel Isles to Great Britain and Northern Europe in the 1860s.",
+          selected: 'Russian Blue'
+        },
+        {
+          id: 43,
+          type: 'Russian White, Black, and Tabby',
+          image:
+            'http://www.russianblue.org.uk/BAC/blackwhite1_clip_image008.jpg',
+          description:
+            'The Russian White, Russian Black, and Russian Tabby are breeds of cat created in 1971, derived from the Russian Blue. The Black and Tabby Russians came from the original mating which created the Russian White. Today the Russian White is fully recognised in Australia, New Zealand, and South Africa and exists in various stages of recognition in the United Kingdom, many countries in mainland Europe, and the United States. In 2010 the American Cat Fanciers Association recognised the Russian Black and Russian White for championship status. ACFA Russian Shorthair Standard',
+          selected: 'Russian White, Black, and Tabby'
+        },
+        {
+          id: 44,
+          type: 'Savannah',
+          image:
+            'https://en.m.wikipedia.org/wiki/Savannah_cat#/media/File%3ASavannah_Cat_portrait.jpg',
+          description:
+            'The Savannah is a hybrid cat breed. It is a cross between a serval and a domestic cat. The Savannah cat is the largest of the cat breeds. A Savannah cat is a cross between a domestic cat and a serval, a medium-sized, large-eared wild African cat. The unusual cross became popular among breeders at the end of the 1990s, and in 2001 The International Cat Association (TICA) accepted it as a new registered breed. In May 2012, TICA accepted it as a championship breed.',
+          selected: 'Savannah'
+        },
+        {
+          id: 45,
+          type: 'Scottish Fold',
+          image:
+            'https://en.m.wikipedia.org/wiki/Scottish_Fold#/media/File%3AAdult_Scottish_Fold.jpg',
+          description:
+            'The Scottish Fold is a breed of domestic cat with a natural dominant-gene mutation that affects cartilage throughout the body, causing the ears to "fold", bending forward and down towards the front of the head, which gives the cat what is often described as an "owl-like" appearance.[',
+          selected: 'Scottish Fold'
+        },
+        {
+          id: 46,
+          type: 'Selkirk Rex',
+          image:
+            'https://upload.wikimedia.org/wikipedia/en/c/c3/PolloSelkirkRex.jpg',
+          description:
+            'The Selkirk Rex is distinct from all other Rex breeds. Unlike the Devon Rex and Cornish Rex, the hair is of normal length and not partly missing. There are longhair and shorthair varieties. It differs from the LaPerm in that the Selkirk Rex coat is plusher and thicker. While the LaPerm gene is a simple dominant, the Selkirk gene (Se) acts as an incomplete dominant; incompletely dominant, allele pairs produce three possible genotypes and phenotypes: heterozygous cats (Sese) may have a fuller coat that is preferred in the show ring, while homozygous cats (SeSe) may have a tighter curl and less coat volume.',
+          selected: 'Selkirk Rex'
+        },
+        {
+          id: 47,
+          type: 'Serengeti Cat',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/1/1a/Serengetimalecat.jpg',
+          description:
+            'The Serengeti is a breed of domestic cat, first developed by crossing a Bengal (domestic and wild hybrid) and an Oriental Shorthair. Recognized and registered by The International Cat Association (TICA), no other first generation crosses can be registered as Serengeti. From the Bengal × Oriental cross came the first foundation Serengeti. Breeders then worked with the cat to produce a cat that resembles the breed profile set by TICA. Created by Karen Sausman of Kingsmark Cattery in California in 1994, the breed is still in the development stages, but the ultimate aim is to produce a cat that looks similar to a serval, without using any recent wild cat blood.',
+          selected: 'Serengeti Cat'
+        },
+        {
+          id: 48,
+          type: 'Siamese',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/2/25/Siam_lilacpoint.jpg',
+          description:
+            'The Siamese cat is one of the first distinctly recognized breeds of Asian cat. Derived from the Wichianmat landrace, one of several varieties of cat native to Thailand (formerly known as Siam), the Siamese became one of the most popular breeds in Europe and North America in the 19th century. The carefully refined modern Siamese is characterized by blue almond-shaped eyes; a triangular head shape; large ears; an elongated, slender, and muscular body; and various forms of point colouration.',
+          selected: 'Siamese'
+        },
+        {
+          id: 49,
+          type: 'Siberian',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/0/0d/Siberian_Forest_Cat.jpg',
+          description:
+            'The Siberian is a landrace variety of domestic cat, present in Russia for centuries, and more recently developed as a formal breed, with standards promulgated since the late 1980s. They vary from medium to medium-large in size. A longer name of the formal breed is Siberian Forest Cat, but it is usually referred to as the Siberian or the Siberian cat. Another name for the formal breed is the Moscow Semi-Longhair.',
+          selected: 'Siberian'
+        },
+        {
+          id: 50,
+          type: 'Singapura',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/5/5a/Moonwalker_the_Singapura.jpg',
+          description:
+            'The Singapura is one of the smallest breeds of cats, noted for its large eyes and ears, brown ticked coat, and blunt tail. Reportedly established from three "drain cats" imported from Singapore in the 1970s, it was later revealed that the cats were originally sent to Singapore from the US before they were exported back to the US. Investigations by the Cat Fanciers\' Association (CFA) concluded no wrongdoing and the Singapura kept its status as a natural breed.',
+          selected: 'Singapura'
+        },
+        {
+          id: 51,
+          type: 'Snowshoe',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/d/d0/Fiona-gata-snowshoe.jpg',
+          description:
+            'The Snowshoe is a breed of cat originating in the United States of America in the 1960s. Snowshoes were first produced in Philadelphia when a Siamese breeder\'s cat gave birth to three kittens with white feet. The breeder, Dorothy Hinds-Daugherty, then began a breeding program to produce what were originally called "Silver Laces",[1] crossing the strangely marked Siamese cats with bi-color American Shorthair cats and other breeds.',
+          selected: 'Snowshoe'
+        },
+        {
+          id: 52,
+          type: 'Somali',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/c/c6/Blue_Somali_kitten_age_3_months.jpg',
+          description:
+            'The Somali cat is often described as a long-haired African cat; a product of a recessive gene in Abyssinian cats, though how the gene was introduced into the Abyssinian gene pool is unknown. The Somalis are recognized for their bushy tails, large almond eyes, and large pointed ears, earning the breed its nickname of "Fox Cat." Their ticked coats, containing between four and twenty colors on each hair, are very fine in texture, making their coats softer to the touch than those of other cat breeds. The cat itself is medium-large in size.',
+          selected: 'Somali'
+        },
+        {
+          id: 53,
+          type: 'Sphynx',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/e/e8/Sphinx2_July_2006.jpg',
+          description:
+            "The Sphynx cat is a breed of cat known for its lack of coat (fur). Hairlessness in cats is a naturally occurring genetic mutation; however, the Sphynx cat, as a breed, was developed through selective breeding, starting in the 1960s. The skin should have the texture of chamois, as it has fine hairs, or they may be completely hairless. Whiskers may be present, either whole or broken, or may be totally absent. They also have a narrow, long head, and webbed feet. Their skin is the color that their fur would be, and all the usual cat markings (solid, point, van, tabby, tortie, etc.) may be found on the Sphynx cat's skin. Because they have no coat, they lose more body heat than coated cats. This makes them warm to the touch and causes them to seek out sources of heat.",
+          selected: 'Sphynx'
+        },
+        {
+          id: 54,
+          type: 'Tonkinese',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/b/b7/Tonkinese_Cat_-_Leo.jpg',
+          description:
+            'Tonkinese are a domestic cat breed produced by crossbreeding between the Siamese and Burmese. They share many of their parents\' distinctively lively, playful personality traits and are similarly distinguished by a pointed coat pattern in a variety of colors. In addition to the modified coat colors of the "mink" pattern, which is a dilution of the point color (as in watercolors), the breed is now being shown in the foundation-like Siamese and Burmese colors: pointed with white and solid overall (sepia). They are also now designated a natural breed, as their history has now determined them to have been extant since the 14th century.',
+          selected: 'Tonkinese'
+        },
+        {
+          id: 55,
+          type: 'Toyger',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/c/ca/Toyger_-_Cornish_Rex_presentation_show_Riihim%C3%A4ki_2008-11-16_IMG_0101.JPG',
+          description:
+            'The toyger is a breed of domestic cat, the result of breeding domestic shorthaired tabbies (beginning in the 1980s) to make them resemble a "toy tiger", as its striped coat is reminiscent of the tiger\'s. The breed\'s creator, Judy Sugden, has stated that the breed was developed in order to inspire people to care about the conservation of tigers in the wild. It was recognized for "registration only" by The International Cat Association in the early 1990s, and advanced through all requirements to be accepted as a full championship breed in 2007. There are about 20 breeders in the United States and another 15 or so in the rest of the world, as of 2012.',
+          selected: 'Toyger'
+        },
+        {
+          id: 56,
+          type: 'Turkish Angora',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/c/ca/Toyger_-_Cornish_Rex_presentation_show_Riihim%C3%A4ki_2008-11-16_IMG_0101.JPG',
+          description:
+            'The Turkish Angora  is a breed of a domestic cat. Turkish Angoras are one of the ancient, natural breeds of cat, having originated in central Turkey, in the Ankara region. The breed has been documented as early as the 17th century and is believed to be the origin of the mutations for both the coloration white and long hair. The breed is also sometimes referred to as simply the Angora or Ankara cat. Turkish Angora cats have long, silky coats and elegant, slender bodies, these bodies can sometimes grow to the length of limousines',
+          selected: 'Turkish Angora'
         }
       ]
     }
