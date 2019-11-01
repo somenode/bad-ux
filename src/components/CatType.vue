@@ -1,21 +1,22 @@
 <template>
-  <div>
-    <div class="grid-x grid-margin-x">
-      <div class="cell small-4 large-offset-2">
+  <div class="grid-container cat-type">
+    <div class="grid-x grid-margin-x align-center">
+      <div class="cell small-4">
         <select v-model="selected">
           <option
             v-for="(breed, index) in breeds"
             v-bind:value="breed"
             :key="index"
             @select="filter = breed"
-          >{{ breed.type }}</option>
+            >{{ breed.type }}</option
+          >
         </select>
       </div>
       <div v-if="selected.id" class="cell small-4">
         <div class="card">
           <img v-if="selected.id" v-bind:src="selected.image" />
           <div class="card-section">
-            <!-- <p v-if="selected.id">{{ selected.type }}</p> -->
+            <p v-if="selected.id">{{ selected.type }}</p>
             <p v-if="selected.id">{{ selected.description }}</p>
           </div>
         </div>
@@ -553,7 +554,7 @@ export default {
 </script>
 
 <style scoped>
-h4 {
-  color: red;
+.cat-type {
+  padding-top: 60px;
 }
 </style>
