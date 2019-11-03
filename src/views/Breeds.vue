@@ -26,8 +26,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.page-header {
-  padding-top: 40px;
-}
-</style>
+<style scoped></style>

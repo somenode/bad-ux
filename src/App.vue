@@ -107,6 +107,10 @@ textarea {
   line-height: 1.15;
   margin: 0; }
 
+.page-header {
+  padding-top: 40px;
+}
+
 button,
 input {
   overflow: visible; }
