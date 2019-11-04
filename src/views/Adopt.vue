@@ -5,7 +5,7 @@
         <h2 class="cell large-8 large-offset-2 page-header">Adopt</h2>
         <p class="cell large-8 large-offset-2">
           Thank you for considering to adopt one of our cats!
-          <br />Please fill out all the fields below.
+          <br />Please fill out the form below and we'll be in touch soon.
         </p>
         <p v-if="errors.length" class="medium-12 cell">
           <b>Please correct the following error(s):</b>
@@ -118,9 +118,7 @@
               </label>
             </div>
             <div class="medium-6 cell">
-              <label for="home" class="text-left"
-                >What type of home do you live in?</label
-              >
+              <label for="home" class="text-left">What type of home do you live in?</label>
               <select id="home" v-model="home" name="home">
                 <option>Single Family</option>
                 <option>Town Home</option>
@@ -141,10 +139,10 @@
             </fieldset>
 
             <div class="medium-6 cell">
-              <label for="adopt" class="text-left"
-                >Is everyone in agreement with the decision to adopt a
-                cat?</label
-              >
+              <label for="adopt" class="text-left">
+                Is everyone in agreement with the decision to adopt a
+                cat?
+              </label>
               <select id="adopt" v-model="adopt" name="adopt">
                 <option>Yes</option>
                 <option>No</option>
@@ -152,7 +150,11 @@
             </div>
           </div>
         </fieldset>
-        <div class="input-button">
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x align-right">
+        <div class="small">
           <input type="submit" class="button" value="Submit" />
         </div>
       </div>
@@ -186,19 +188,15 @@ export default {
     checkForm: function(e) {
       this.errors = []
 
-      if (!this.name) {
-        this.errors.push('Name required.')
+      if (!this.name || !this.email || !this.age) {
+        this.errors.push('This is required.')
       }
-      if (!this.age) {
-        this.errors.push('Age required.')
-      }
+
       if (this.age < 18 || this.age > 100) {
         this.errors.push('Sorry, you are ineligible.')
       }
 
-      if (!this.email) {
-        this.errors.push('Email required.')
-      } else if (!this.validEmail(this.email)) {
+      if (!this.validEmail(this.email)) {
         this.errors.push('Valid email required.')
       }
 
