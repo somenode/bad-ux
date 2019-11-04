@@ -21,15 +21,19 @@
       <div class="grid-x grid-padding-x">
         <div class="medium-6 cell">
           <label for="name" class="text-left middle">
-            Name
+            Name*
             <input id="name" v-model="name" type="text" name="name" />
+            <span class="help-text"
+              >Please fill out your first and last name.</span
+            >
           </label>
         </div>
 
         <div class="medium-6 cell">
           <label for="age" class="text-left middle">
-            Age
+            Age*
             <input id="age" v-model="age" type="number" name="age" min="0" />
+            <span class="help-text">Please fill out your age.</span>
           </label>
         </div>
 
@@ -37,6 +41,9 @@
           <label for="tel" class="text-left middle">
             Home phone
             <input id="tel" v-model="tel" type="number" name="tel" min="0" />
+            <span class="help-text"
+              >Please fill out your home phone number.</span
+            >
           </label>
         </div>
 
@@ -44,13 +51,17 @@
           <label for="ctel" class="text-left middle">
             Cell phone
             <input id="ctel" v-model="ctel" type="number" name="ctel" min="0" />
+            <span class="help-text"
+              >Please fill out your cell phone number.</span
+            >
           </label>
         </div>
 
         <div class="medium-6 cell">
           <label for="email" class="text-left middle">
-            Email
+            Email*
             <input id="email" v-model="email" type="email" name="email" />
+            <span class="help-text">Please fill out your email.</span>
           </label>
         </div>
 
@@ -141,10 +152,9 @@
             </fieldset>
 
             <div class="medium-6 cell">
-              <label for="adopt" class="text-left"
-                >Is everyone in agreement with the decision to adopt a
-                cat?</label
-              >
+              <label for="adopt" class="text-left">
+                Is everyone in agreement with the decision to adopt a cat?
+              </label>
               <select id="adopt" v-model="selected" name="adopt">
                 <option id="adoptyes">Yes</option>
                 <option id="adoptno">No</option>
@@ -246,5 +256,8 @@ export default {
 }
 li {
   list-style-type: none;
+}
+input {
+  margin-bottom: 0;
 }
 </style>
