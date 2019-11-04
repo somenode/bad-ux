@@ -10,7 +10,6 @@
         <p v-if="errors.length" class="medium-12 cell">
           <b>Please correct the following error(s):</b>
         </p>
-
         <ul class="medium-12 cell">
           <li v-for="error in errors" :key="error.length">{{ error }}</li>
         </ul>
@@ -23,9 +22,7 @@
           <label for="name" class="text-left middle">
             Name*
             <input id="name" v-model="name" type="text" name="name" />
-            <span class="help-text"
-              >Please fill out your first and last name.</span
-            >
+            <span class="help-text">Please fill out your first and last name.</span>
           </label>
         </div>
 
@@ -41,9 +38,7 @@
           <label for="tel" class="text-left middle">
             Home phone
             <input id="tel" v-model="tel" type="number" name="tel" min="0" />
-            <span class="help-text"
-              >Please fill out your home phone number.</span
-            >
+            <span class="help-text">Please fill out your home phone number.</span>
           </label>
         </div>
 
@@ -51,9 +46,7 @@
           <label for="ctel" class="text-left middle">
             Cell phone
             <input id="ctel" v-model="ctel" type="number" name="ctel" min="0" />
-            <span class="help-text"
-              >Please fill out your cell phone number.</span
-            >
+            <span class="help-text">Please fill out your cell phone number.</span>
           </label>
         </div>
 
@@ -129,9 +122,7 @@
               </label>
             </div>
             <div class="medium-6 cell">
-              <label for="home" class="text-left"
-                >What type of home do you live in?</label
-              >
+              <label for="home" class="text-left">What type of home do you live in?</label>
               <select id="home" v-model="home" name="home">
                 <option>Single Family</option>
                 <option>Town Home</option>
@@ -143,23 +134,50 @@
               </select>
             </div>
 
-            <fieldset class="medium-6 cell">
+            <!-- <fieldset class="medium-6 cell">
               <legend>Is anyone in the family allergic to cats?</legend>
               <input id="allergyyes" type="checkbox" v-model="checkedyes" />
               <label for="allergyyes">Yes</label>
               <input id="allergyno" type="checkbox" v-model="checkedno" />
               <label for="allergyno">No</label>
-            </fieldset>
+            </fieldset>-->
 
             <div class="medium-6 cell">
-              <label for="adopt" class="text-left">
-                Is everyone in agreement with the decision to adopt a cat?
-              </label>
+              <label
+                for="adopt"
+                class="text-left"
+              >Is everyone in agreement with the decision to adopt a cat?</label>
               <select id="adopt" v-model="selected" name="adopt">
                 <option id="adoptyes">Yes</option>
                 <option id="adoptno">No</option>
               </select>
             </div>
+
+            <fieldset class="medium-12 cell">
+              <legend class="box-data">Why do you want to adopt a cat?</legend>
+              <div class="grid-x grid-padding-x align-right">
+                <div class="medium-6 cell box-data">
+                  <input id="companionship" type="checkbox" v-model="companionship" />
+                  <label for="companionship">To fulfill my need for compansionship</label>
+                </div>
+                <div class="medium-6 cell box-data">
+                  <input id="stress" type="checkbox" v-model="stress" />
+                  <label for="stress">To help me (or someone in my family) cope with stress</label>
+                </div>
+                <div class="medium-6 cell box-data">
+                  <input id="caring" type="checkbox" v-model="caring" />
+                  <label for="caring">For my children to learn about caring for an animal</label>
+                </div>
+                <div class="medium-6 cell box-data">
+                  <input id="rodent" type="checkbox" v-model="rodent" />
+                  <label for="rodent">To keep my house rodent free</label>
+                </div>
+                <div class="medium-6 cell box-data">
+                  <input id="affection" type="checkbox" v-model="affection" />
+                  <label for="affection">I just like cats</label>
+                </div>
+              </div>
+            </fieldset>
           </div>
         </fieldset>
       </div>
@@ -191,8 +209,11 @@ export default {
       adults: null,
       children: null,
       home: null,
-      checkedyes: null,
-      checkedno: null,
+      companionship: null,
+      caring: null,
+      stress: null,
+      rodent: null,
+      affection: null,
       selected: ''
     }
   },
@@ -222,27 +243,38 @@ export default {
       if (!this.children || !this.adults || !this.home) {
         this.errors.push('😱 Please correct this information.')
       }
-      if (!this.checkedyes && !this.checkedno) {
-        this.errors.push('👉 Please select one.')
-      }
-      if (this.checkedyes && this.checkedno) {
-        this.errors.push('👉 Please select one.')
+
+      if (
+        !this.companionship &&
+        !this.caring &&
+        !this.stress &&
+        !this.rodent &&
+        !this.affection
+      ) {
+        this.errors.push('👉 Please select one')
       }
 
-      if (this.checkedyes && this.selected == 'Yes') {
-        this.errors.push('🤔 Are you sure you should adopt?')
+      if (
+        (this.companionship && this.caring) ||
+        (this.companionship && this.stress) ||
+        (this.companionship && this.rodent) ||
+        (this.companionship && this.affection) ||
+        (this.caring && this.stress) ||
+        (this.caring && this.rodent) ||
+        (this.caring && this.affection) ||
+        (this.stress && this.rodent) ||
+        (this.stress && this.affection) ||
+        (this.affection && this.rodent)
+      ) {
+        this.errors.push('👉 Please select one')
       }
-
-      if (this.checkedyes && this.selected == 'No') {
-        this.errors.push('😮 Why?')
-      }
-
       if (!this.errors.length) {
         return true
       }
 
       e.preventDefault()
     },
+
     validEmail: function(email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       return re.test(email)
@@ -259,5 +291,8 @@ li {
 }
 input {
   margin-bottom: 0;
+}
+.box-data {
+  text-align: left;
 }
 </style>

@@ -17,7 +17,7 @@
           <router-link :to="{ name: 'allergies' }">Allergies</router-link>
         </li>
         <li class="cell medium-3">
-          <router-link :to="{ name: 'info' }">Cat Info</router-link>
+          <a href="https://www.factretriever.com/cat-facts">Cat Info</a>
         </li>
       </ul>
     </nav>
