@@ -1,6 +1,16 @@
 <template>
-  <!-- This demo uses flex grid but you can use float grid too -->
-  <div>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <h2 class="cell large-8 large-offset-2 page-header">Home</h2>
+      <p class="cell large-8 large-offset-2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Arcu ac tortor
+        dignissim convallis aenean et. Egestas maecenas pharetra convallis
+        posuere morbi leo.
+      </p>
+    </div>
+  </div>
+  <!-- <div>
     <div>
       <div v-if="isOpen">
         <h1>Modal heading</h1>
@@ -8,7 +18,7 @@
       </div>
       <button @click="isOpen = !isOpen">Open modal</button>
     </div>
-  </div>
+  </div>-->
 </template>
 
 <script>

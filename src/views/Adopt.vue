@@ -1,13 +1,18 @@
 <template>
-  <form id="app" @submit="checkForm" action="https://vuejs.org/" method="post">
+  <form id="app" @submit="checkForm" action="./thank-you">
     <div class="grid-container">
       <div class="grid-x grid-margin-x">
         <h2 class="cell large-8 large-offset-2 page-header">Adopt</h2>
-        <p v-if="errors.length">
+        <p class="cell large-8 large-offset-2">
+          Thank you for considering to adopt one of our cats!
+          <br />Please fill out all the fields below.
+        </p>
+        <p v-if="errors.length" class="medium-12 cell">
           <b>Please correct the following error(s):</b>
         </p>
-        <ul>
-          <li v-for="error in errors" :key="error">{{ error }}</li>
+
+        <ul class="medium-12 cell">
+          <li v-for="error in errors" :key="error.length">{{ error }}</li>
         </ul>
       </div>
     </div>
@@ -72,7 +77,7 @@
             <div class="medium-6 cell">
               <label for="State" class="text-left middle">
                 State
-                <input id="state" v-model="city" type="text" name="state" />
+                <input id="state" v-model="state" type="text" name="state" />
               </label>
             </div>
             <div class="medium-6 cell">
@@ -85,7 +90,7 @@
         </fieldset>
 
         <fieldset class="medium-12 cell address fieldset">
-          <legend class="text-left middle">Housing for your Cat</legend>
+          <legend class="text-left middle">Housing for Your Cat</legend>
 
           <div class="grid-x grid-padding-x">
             <div class="medium-6 cell">
@@ -113,9 +118,7 @@
               </label>
             </div>
             <div class="medium-6 cell">
-              <label for="home" class="text-left"
-                >What type of home do you live in?</label
-              >
+              <label for="home" class="text-left">What type of home do you live in?</label>
               <select id="home" v-model="home" name="home">
                 <option>Single Family</option>
                 <option>Town Home</option>
@@ -129,16 +132,17 @@
 
             <fieldset class="medium-6 cell">
               <legend>Is anyone in the family allergic to cats?</legend>
-              <input id="allergyyes" type="checkbox" />
+              <input id="allergyyes" type="checkbox" v-model="checkedyes" />
               <label for="allergyyes">Yes</label>
-              <input id="allergyno" type="checkbox" />
+              <input id="allergyno" type="checkbox" v-model="checkedno" />
               <label for="allergyno">No</label>
             </fieldset>
 
             <div class="medium-6 cell">
-              <label for="agreement" class="text-left">
-                Is everyone in agreement with the decision to adopt a cat?
-              </label>
+              <label
+                for="adopt"
+                class="text-left"
+              >Is everyone in agreement with the decision to adopt a cat?</label>
               <select id="adopt" v-model="adopt" name="adopt">
                 <option>Yes</option>
                 <option>No</option>
@@ -160,15 +164,24 @@ export default {
       errors: [],
       name: null,
       age: null,
-      address: null
+      address: null,
+      city: null,
+      state: null,
+      zip: null,
+      tel: null,
+      ctel: null,
+      email: null,
+      vet: null,
+      adults: null,
+      children: null,
+      home: null,
+      checkedyes: null,
+      checkedno: null,
+      adopt: null
     }
   },
   methods: {
     checkForm: function(e) {
-      if (this.name && this.age) {
-        return true
-      }
-
       this.errors = []
 
       if (!this.name) {
@@ -177,11 +190,42 @@ export default {
       if (!this.age) {
         this.errors.push('Age required.')
       }
-      if (!this.address) {
-        this.errors.push('Address required.')
+      if (this.age < 18 || this.age > 100) {
+        this.errors.push('Sorry, you are ineligible.')
+      }
+
+      if (!this.email) {
+        this.errors.push('Email required.')
+      } else if (!this.validEmail(this.email)) {
+        this.errors.push('Valid email required.')
+      }
+
+      if (!this.address || !this.city || !this.vet) {
+        this.errors.push('Please fill this field out.')
+      }
+
+      if (!this.state || !this.zip) {
+        this.errors.push('Field response missing.')
+      }
+      if (!this.children || !this.adults || !this.home) {
+        this.errors.push('Please correct this information.')
+      }
+      if (!this.checkedyes || !this.checkedno) {
+        this.errors.push('Please select one.')
+      }
+      if (this.checkedyes && this.checkedno) {
+        this.errors.push('Please select one.')
+      }
+
+      if (!this.errors.length) {
+        return true
       }
 
       e.preventDefault()
+    },
+    validEmail: function(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return re.test(email)
     }
   }
 }
@@ -189,5 +233,8 @@ export default {
 <style scoped>
 .address > label {
   padding: 0;
+}
+li {
+  list-style-type: none;
 }
 </style>
