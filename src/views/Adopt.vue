@@ -118,7 +118,9 @@
               </label>
             </div>
             <div class="medium-6 cell">
-              <label for="home" class="text-left">What type of home do you live in?</label>
+              <label for="home" class="text-left"
+                >What type of home do you live in?</label
+              >
               <select id="home" v-model="home" name="home">
                 <option>Single Family</option>
                 <option>Town Home</option>
@@ -139,13 +141,13 @@
             </fieldset>
 
             <div class="medium-6 cell">
-              <label for="adopt" class="text-left">
-                Is everyone in agreement with the decision to adopt a
-                cat?
-              </label>
-              <select id="adopt" v-model="adopt" name="adopt">
-                <option>Yes</option>
-                <option>No</option>
+              <label for="adopt" class="text-left"
+                >Is everyone in agreement with the decision to adopt a
+                cat?</label
+              >
+              <select id="adopt" v-model="selected" name="adopt">
+                <option id="adoptyes">Yes</option>
+                <option id="adoptno">No</option>
               </select>
             </div>
           </div>
@@ -181,7 +183,7 @@ export default {
       home: null,
       checkedyes: null,
       checkedno: null,
-      adopt: null
+      selected: ''
     }
   },
   methods: {
@@ -189,32 +191,40 @@ export default {
       this.errors = []
 
       if (!this.name || !this.email || !this.age) {
-        this.errors.push('This is required.')
+        this.errors.push('😱 This is required.')
       }
 
       if (this.age < 18 || this.age > 100) {
-        this.errors.push('Sorry, you are ineligible.')
+        this.errors.push('🙃 Sorry, you are ineligible.')
       }
 
       if (!this.validEmail(this.email)) {
-        this.errors.push('Valid email required.')
+        this.errors.push('😱 Valid email required.')
       }
 
       if (!this.address || !this.city || !this.vet) {
-        this.errors.push('Please fill this field out.')
+        this.errors.push('😱 Please fill this field out.')
       }
 
       if (!this.state || !this.zip) {
-        this.errors.push('Field response missing.')
+        this.errors.push('😱 Field response missing.')
       }
       if (!this.children || !this.adults || !this.home) {
-        this.errors.push('Please correct this information.')
+        this.errors.push('😱 Please correct this information.')
       }
       if (!this.checkedyes && !this.checkedno) {
-        this.errors.push('Please select one.')
+        this.errors.push('👉 Please select one.')
       }
       if (this.checkedyes && this.checkedno) {
-        this.errors.push('Please select one.')
+        this.errors.push('👉 Please select one.')
+      }
+
+      if (this.checkedyes && this.selected == 'Yes') {
+        this.errors.push('🤔 Are you sure you should adopt?')
+      }
+
+      if (this.checkedyes && this.selected == 'No') {
+        this.errors.push('😮 Why?')
       }
 
       if (!this.errors.length) {
