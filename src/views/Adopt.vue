@@ -118,7 +118,9 @@
               </label>
             </div>
             <div class="medium-6 cell">
-              <label for="home" class="text-left">What type of home do you live in?</label>
+              <label for="home" class="text-left"
+                >What type of home do you live in?</label
+              >
               <select id="home" v-model="home" name="home">
                 <option>Single Family</option>
                 <option>Town Home</option>
@@ -139,10 +141,10 @@
             </fieldset>
 
             <div class="medium-6 cell">
-              <label
-                for="adopt"
-                class="text-left"
-              >Is everyone in agreement with the decision to adopt a cat?</label>
+              <label for="adopt" class="text-left"
+                >Is everyone in agreement with the decision to adopt a
+                cat?</label
+              >
               <select id="adopt" v-model="adopt" name="adopt">
                 <option>Yes</option>
                 <option>No</option>
@@ -210,7 +212,7 @@ export default {
       if (!this.children || !this.adults || !this.home) {
         this.errors.push('Please correct this information.')
       }
-      if (!this.checkedyes || !this.checkedno) {
+      if (!this.checkedyes && !this.checkedno) {
         this.errors.push('Please select one.')
       }
       if (this.checkedyes && this.checkedno) {
