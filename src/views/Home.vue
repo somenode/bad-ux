@@ -1,32 +1,47 @@
 <template>
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x">
-      <h2 class="cell large-8 large-offset-2 page-header">Home</h2>
-      <p class="cell large-8 large-offset-2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Arcu ac tortor
-        dignissim convallis aenean et. Egestas maecenas pharetra convallis
-        posuere morbi leo.
-      </p>
+  <div>
+    <div
+      v-if="message.length > 0"
+      class="reveal-modal-bg cookies"
+      role="dialog"
+    >
+      <p>{{ message }}</p>
     </div>
-  </div>
-  <!-- <div>
-    <div>
-      <div v-if="isOpen">
-        <h1>Modal heading</h1>
-        <p>This my first modal using vue.js</p>
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <h2 class="cell large-8 large-offset-2 page-header">Home</h2>
+        <p class="cell large-8 large-offset-2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu ac
+          tortor dignissim convallis aenean et. Egestas maecenas pharetra
+          convallis posuere morbi leo.
+        </p>
       </div>
-      <button @click="isOpen = !isOpen">Open modal</button>
     </div>
-  </div>-->
+    <footer>
+      <cookie-law position="slide-from-bottom" theme="dark-lime">
+        <div slot="message">
+          Cat World uses cookies to enhance your experience, for analytics and
+          to show you offers tailored to your interests on our site. We may
+          share your information with out advertising and analytic partners.
+          Find out more by reading our Cookies Policy which contains further
+          information about the cookies and other technologies we use and
+          information about how to disable them. By clicking “Accept”, you agree
+          to our use of cookies and similar technologies.
+        </div>
+      </cookie-law>
+    </footer>
+  </div>
 </template>
-
 <script>
+import CookieLaw from 'vue-cookie-law'
+
 export default {
+  components: {
+    CookieLaw
+  },
   data: function() {
-    return {
-      isOpen: false
-    }
+    return { message: '' }
   },
   methods: {
     callFunction: function() {
@@ -43,6 +58,9 @@ export default {
 }
 </script>
 <style scoped>
+.cookies {
+  background-color: red;
+}
 .modal-mask {
   position: fixed;
   z-index: 9998;
