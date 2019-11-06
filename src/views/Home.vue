@@ -24,10 +24,11 @@
           Cat World uses cookies to enhance your experience, for analytics and
           to show you offers tailored to your interests on our site. We may
           share your information with out advertising and analytic partners.
-          Find out more by reading our Cookies Policy which contains further
-          information about the cookies and other technologies we use and
-          information about how to disable them. By clicking “Accept”, you agree
-          to our use of cookies and similar technologies.
+          Find out more by reading our
+          <router-link to="legal-notes">Cookies Policy</router-link>&nbsp;which
+          contains further information about the cookies and other technologies
+          we use and information about how to disable them. By clicking
+          “Accept”, you agree to our use of cookies and similar technologies.
         </div>
       </cookie-law>
     </footer>
@@ -44,13 +45,13 @@ export default {
     return { message: '' }
   },
   methods: {
-    callFunction: function() {
-      var v = this
-      setTimeout(function() {
-        v.message =
-          'Cat World uses cookies to enhance your experience, for analytics and to show you offers tailored to your interests on our site. We may share your information with out advertising and analytic partners. Find out more by reading our Cookies Policy which contains further information about the cookies and other technologies  we use and information about how to disable them. By clicking “Accept”, you agree to our use of cookies and similar technologies.'
-      }, 2000)
-    }
+    // callFunction: function() {
+    //   var v = this
+    //   setTimeout(function() {
+    //     v.message =
+    //       'Cat World uses cookies to enhance your experience, for analytics and to show you offers tailored to your interests on our site. We may share your information with out advertising and analytic partners. Find out more by reading our Cookies Policy which contains further information about the cookies and other technologies  we use and information about how to disable them. By clicking “Accept”, you agree to our use of cookies and similar technologies.'
+    //   }, 2000)
+    // }
   },
   mounted() {
     this.callFunction()

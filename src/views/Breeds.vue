@@ -22,6 +22,11 @@ import CatType from '@/components/CatType.vue'
 export default {
   components: {
     CatType
+  },
+  data() {
+    return {
+      active: false
+    }
   }
 }
 </script>
