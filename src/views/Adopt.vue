@@ -1,16 +1,15 @@
 <template>
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x">
-      <modal-direction
-        class="slide medium-4 cell large-offset-4"
-      ></modal-direction>
-
-      <h2 class="cell large-8 large-offset-2 page-header">Adopt</h2>
-      <p class="cell large-8 large-offset-2">
-        Thank you for considering to adopt one of our cats!
-        <br />Please fill out the form below and we'll be in touch soon.
-      </p>
-      <AdoptForm />
+  <div>
+    <modal-direction class="style" id="fade-in"></modal-direction>
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <h2 class="cell large-8 large-offset-2 page-header">Adopt</h2>
+        <p class="cell large-8 large-offset-2">
+          Thank you for considering to adopt one of our cats!
+          <br />Please fill out the form below and we'll be in touch soon.
+        </p>
+        <AdoptForm />
+      </div>
     </div>
   </div>
 </template>
@@ -114,28 +113,49 @@ export default {
 }
 </script>
 <style scoped>
-.slide {
-  position: absolute;
-  background: #858ae3;
-  opacity: 0.9;
-  left: -2080px;
-  -webkit-animation: slide 0.5s forwards;
-  -webkit-animation-delay: 6s;
-  animation: slide 0.5s forwards;
-  animation-delay: 6s;
-  border-radius: 10%;
+#fade-in {
+  -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+  animation: 3s ease 0s normal forwards 1 fadein;
 }
 
-@-webkit-keyframes slide {
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
   100% {
-    left: 0;
+    opacity: 0.9;
   }
 }
 
-@keyframes slide {
-  100% {
-    left: 0;
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
   }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.style {
+  top: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  background: #310d20;
+  animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+  animation: fadeIn ease 2s;
+  -moz-animation-delay: 5s;
+  animation: fadeIn ease 2s;
+  -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+  -moz-animation: 3s ease 0s normal forwards 1 fadein;
+  position: fixed;
 }
 
 p {

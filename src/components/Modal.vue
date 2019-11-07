@@ -1,28 +1,34 @@
 <template>
-  <div v-show="!isHidden" class="modal-mask grid-container">
-    <div class="grid-x grid-padding-x">
+  <div v-show="!isHidden" class="modal-mask grid-container fluid">
+    <div class="grid-x grid-margin-x">
       <h2 class="large-12 cell">
         🐈 Our Newsletter
         <br />is Purrrr-fect
       </h2>
-      <div class="medium-6 cell">
-        <label for="name" class="text-left middle adopt">
-          Name
-          <input id="name" v-model="name" type="text" name="name" />
-        </label>
-      </div>
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-6 cell">
+            <label for="name" class="text-left middle adopt">
+              Name
+              <input id="name" v-model="name" type="text" name="name" />
+            </label>
+          </div>
 
-      <div class="medium-6 cell">
-        <label for="email" class="text-left middle adopt">
-          Email
-          <input id="email" v-model="email" type="email" name="email" />
-        </label>
-      </div>
-      <div class="medium-12 cell yes-subscribe align-right">
-        <button @click="isHidden = true">Yes, Subscribe Me!</button>
-      </div>
-      <div class="medium-12 cell no-subscribe">
-        <button @click="isHidden = true">No, I'd rather stay ignorant</button>
+          <div class="medium-6 cell">
+            <label for="email" class="text-left middle adopt">
+              Email
+              <input id="email" v-model="email" type="email" name="email" />
+            </label>
+          </div>
+          <div class="medium-12 cell yes-subscribe align-right">
+            <button @click="isHidden = true">Yes, Subscribe Me!</button>
+          </div>
+          <div class="medium-12 cell no-subscribe">
+            <button @click="isHidden = true">
+              No, I'd rather stay ignorant
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -59,10 +65,8 @@ button,
   text-align: right;
 }
 .modal-mask {
-  margin-top: 120px;
   padding: 30px;
-  left: 1000px;
-  height: 50%;
   transition: opacity 0.3s ease;
+  width: auto;
 }
 </style>
