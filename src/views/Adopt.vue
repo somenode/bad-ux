@@ -114,8 +114,9 @@ export default {
 </script>
 <style scoped>
 #fade-in {
-  -webkit-animation: 5s ease 0s normal forwards 1 fadein;
-  animation: 5s ease 0s normal forwards 1 fadein;
+  -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+  -moz-animation: 2s ease 0s normal forwards 1 fadein;
+  animation: 2s ease 0s normal forwards 1 fadein;
 }
 
 @keyframes fadein {
@@ -144,7 +145,7 @@ export default {
 
 .style {
   top: 0px;
-  margin: 0px;
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   background: #310d20;
