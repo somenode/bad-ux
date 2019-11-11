@@ -1,7 +1,10 @@
 <template>
   <div class="grid-container cat-type">
     <div class="grid-x grid-margin-x align-center">
-      <div class="cell small-4">
+      <div class="cell medium-10 text-center">
+        <p>Search our catalog to find the best breed for you!</p>
+      </div>
+      <div class="cell medium-4">
         <select v-model="selected">
           <option
             v-for="(breed, index) in breeds"
@@ -12,7 +15,7 @@
           >
         </select>
       </div>
-      <div v-if="selected.id" class="cell small-4">
+      <div v-if="selected.id" class="cell medium-4">
         <div class="card">
           <img v-if="selected.id" v-bind:src="selected.image" />
           <div class="card-section">
@@ -554,7 +557,13 @@ export default {
 </script>
 
 <style scoped>
+p {
+  font-size: 1.2em;
+}
 .cat-type {
-  padding-top: 60px;
+  padding: 60px 0px;
+}
+label {
+  font-size: 1.1em;
 }
 </style>

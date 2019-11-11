@@ -1,6 +1,7 @@
 <template>
   <div>
-    <modal-direction class="style" id="fade-in"></modal-direction>
+    <NavBarAlt />
+    <!-- <modal-direction class="style" id="fade-in"></modal-direction> -->
     <div class="grid-container">
       <div class="grid-x grid-margin-x">
         <h2 class="cell large-8 large-offset-2 page-header">Adopt</h2>
@@ -11,17 +12,22 @@
         <AdoptForm />
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 <script>
-import ModalDirection from '@/components/Modal.vue'
+// import ModalDirection from '@/components/Modal.vue'
 import AdoptForm from '@/components/AdoptForm.vue'
+import NavBarAlt from '@/components/NavBarAlt.vue'
+import Footer from '@/components/Footer.vue'
 // import ModalSubscribe from '@/components/ModalSubscribe.vue'
 
 export default {
   components: {
-    ModalDirection,
-    AdoptForm
+    // ModalDirection,
+    AdoptForm,
+    NavBarAlt,
+    Footer
   },
   data: function() {
     return {
@@ -114,9 +120,9 @@ export default {
 </script>
 <style scoped>
 #fade-in {
-  -webkit-animation: 2s ease 0s normal forwards 1 fadein;
-  -moz-animation: 2s ease 0s normal forwards 1 fadein;
-  animation: 2s ease 0s normal forwards 1 fadein;
+  -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+  -moz-animation: 3s ease 0s normal forwards 1 fadein;
+  animation: 3s ease 0s normal forwards 1 fadein;
 }
 
 @keyframes fadein {

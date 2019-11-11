@@ -24,9 +24,7 @@
             <button @click="isHidden = true">Yes, Subscribe Me!</button>
           </div>
           <div class="medium-12 cell no-subscribe">
-            <button @click="isHidden = true">
-              No, I'd rather stay ignorant
-            </button>
+            <button @click="isHidden = true">No thanks.</button>
           </div>
         </div>
       </div>

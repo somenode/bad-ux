@@ -1,31 +1,43 @@
 <template>
   <div>
-    <div
-      v-if="message.length > 0"
-      class="reveal-modal-bg cookies"
-      role="dialog"
-    >
-      <p>{{ message }}</p>
-    </div>
+    <NavBar />
+    <modal-direction class="style" id="fade-in"></modal-direction>
     <div class="grid-container">
-      <div class="grid-x grid-margin-x">
-        <h2 class="cell large-8 large-offset-2 page-header">Home</h2>
+      <div class="grid-x grid-padding-x">
         <p class="cell large-8 large-offset-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu ac
-          tortor dignissim convallis aenean et. Egestas maecenas pharetra
-          convallis posuere morbi leo.
+          Welcome to Cat World.
+          <router-link to="/breeds">Browse our cats</router-link>&nbsp; and
+          consider
+          <router-link to="/adopt-a-cat"
+            >&nbsp; applying as an adopter</router-link
+          >.
         </p>
+        <img class="small-4 cell" v-bind:src="catBelly" />
+        <img class="small-4 cell" v-bind:src="catScarf" />
+        <img class="small-4 cell" v-bind:src="kittenbigEyes" />
+        <img class="small-4 cell" v-bind:src="kittenBasket" />
+        <img class="small-4 cell" v-bind:src="kittenGrass" />
+        <img class="small-4 cell" v-bind:src="kittenHay" />
+        <img class="small-4 cell" v-bind:src="kittengreenEyes" />
+        <img class="small-4 cell" v-bind:src="kittencatDog" />
+        <img class="small-4 cell" v-bind:src="kittenBabies" />
       </div>
     </div>
+
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <video-player :options="videoOptions" class="video-player" />
+      </div>
+    </div>
+    <Footer />
     <footer>
-      <cookie-law position="slide-from-bottom" theme="dark-lime">
+      <cookie-law position="slide-from-top" theme="dark-lime">
         <div slot="message">
           Cat World uses cookies to enhance your experience, for analytics and
           to show you offers tailored to your interests on our site. We may
           share your information with out advertising and analytic partners.
           Find out more by reading our
-          <router-link to="legal-notes">Cookies Policy</router-link>&nbsp;which
+          <router-link to="policy">Cookies Policy</router-link>&nbsp;which
           contains further information about the cookies and other technologies
           we use and information about how to disable them. By clicking
           “Accept”, you agree to our use of cookies and similar technologies.
@@ -36,93 +48,105 @@
 </template>
 <script>
 import CookieLaw from 'vue-cookie-law'
+import NavBar from '@/components/NavBar.vue'
+import ModalDirection from '@/components/Modal.vue'
+import VideoPlayer from '@/components/VideoPlayer.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   components: {
-    CookieLaw
+    CookieLaw,
+    NavBar,
+    ModalDirection,
+    VideoPlayer,
+    Footer
   },
   data: function() {
-    return { message: '' }
-  },
-  methods: {
-    // callFunction: function() {
-    //   var v = this
-    //   setTimeout(function() {
-    //     v.message =
-    //       'Cat World uses cookies to enhance your experience, for analytics and to show you offers tailored to your interests on our site. We may share your information with out advertising and analytic partners. Find out more by reading our Cookies Policy which contains further information about the cookies and other technologies  we use and information about how to disable them. By clicking “Accept”, you agree to our use of cookies and similar technologies.'
-    //   }, 2000)
-    // }
-  },
-  mounted() {
-    this.callFunction()
+    return {
+      catBelly: require('../assets/cute-cat-belly.jpg'),
+      catScarf: require('../assets/cat-scarf.jpg'),
+      kittengreenEyes: require('../assets/kitten-greeneyes.jpg'),
+      kittenBasket: require('../assets/kittens-basket.jpg'),
+      kittenGrass: require('../assets/kittens-grass.jpg'),
+      kittenHay: require('../assets/kittens-hay.jpg'),
+      kittenbigEyes: require('../assets/bigstock-bigeyes.jpg'),
+      kittencatDog: require('../assets/bigstock-cat-dog.jpg'),
+      kittenBabies: require('../assets/bigstock-kittens.jpg'),
+      videoOptions: {
+        autoplay: true,
+        controls: true,
+        sources: [
+          {
+            src: require('../assets/meowing.mp4'),
+            type: 'video/mp4'
+          }
+        ]
+      }
+    }
   }
 }
 </script>
 <style scoped>
+p {
+  font-size: 1.2em;
+}
+.video-player {
+  z-index: 0;
+}
+
+#fade-in {
+  -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+  -moz-animation: 3s ease 0s normal forwards 1 fadein;
+  animation: 3s ease 0s normal forwards 1 fadein;
+  z-index: 1000;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.style {
+  top: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  background: #310d20;
+  position: fixed;
+}
 .cookies {
   background-color: red;
 }
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
-  transition: opacity 0.3s ease;
+
+.grid-padding-x > .cell {
+  padding-bottom: 0.9375rem;
+  padding-top: 0.9375rem;
 }
 
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+.Cookie.Cookie--slide-from-top.Cookie--dark-lime {
+  bottom: 0;
 }
 
-.modal-container {
-  width: 300px;
-  margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
-}
-
-.modal-body {
-  margin: 20px 0;
-}
-
-.modal-default-button {
-  float: right;
-}
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+a {
+  color: #2a33f4;
 }
 </style>

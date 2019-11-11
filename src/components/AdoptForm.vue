@@ -17,9 +17,7 @@
           <label for="name" class="text-left middle adopt">
             Name*
             <input id="name" v-model="name" type="text" name="name" />
-            <span class="help-text"
-              >Please fill out your first and last name.</span
-            >
+            <span class="help-text">Please fill out your first and last name.</span>
           </label>
         </div>
 
@@ -35,19 +33,15 @@
           <label for="tel" class="text-left middle adopt">
             Home phone
             <input id="tel" v-model="tel" type="number" name="tel" min="0" />
-            <span class="help-text"
-              >Please fill out your home phone number.</span
-            >
+            <span class="help-text">Please fill out your home phone number.</span>
           </label>
         </div>
 
         <div class="medium-6 cell">
           <label for="ctel" class="text-left middle adopt">
             Cell phone
-            <input id="ctel" v-model="ctel" type="number" name="ctel" min="0" />
-            <span class="help-text"
-              >Please fill out your cell phone number.</span
-            >
+            <input id="ctel" v-model="ctel" type="tel" name="ctel" min="0" />
+            <span class="help-text">Please fill out your cell phone number.</span>
           </label>
         </div>
 
@@ -123,9 +117,7 @@
               </label>
             </div>
             <div class="medium-6 cell">
-              <label for="home" class="text-left adopt"
-                >What type of home do you live in?</label
-              >
+              <label for="home" class="text-left adopt">What type of home do you live in?</label>
               <select id="home" v-model="home" name="home">
                 <option>Single Family</option>
                 <option>Town Home</option>
@@ -146,9 +138,10 @@
             </fieldset>-->
 
             <div class="medium-6 cell">
-              <label for="adopt" class="text-left adopt">
-                Is everyone in agreement with the decision to adopt a cat?
-              </label>
+              <label
+                for="adopt"
+                class="text-left adopt"
+              >Is everyone in agreement with the decision to adopt a cat?</label>
               <select id="adopt" v-model="selected" name="adopt">
                 <option id="adoptyes">Yes</option>
                 <option id="adoptno">No</option>
@@ -156,37 +149,29 @@
             </div>
 
             <fieldset class="medium-12 cell">
-              <legend class="box-data adopt">
-                Why do you want to adopt a cat?
-              </legend>
+              <legend class="box-data adopt">Why do you want to adopt a cat?</legend>
               <div class="grid-x grid-padding-x align-right">
                 <div class="medium-6 cell box-data">
-                  <input
-                    id="companionship"
-                    type="checkbox"
-                    v-model="companionship"
-                  />
-                  <label for="companionship" class="adopt"
-                    >To fulfill my need for compansionship</label
-                  >
+                  <input id="companionship" type="checkbox" v-model="companionship" />
+                  <label for="companionship" class="adopt">To fulfill my need for compansionship</label>
                 </div>
                 <div class="medium-6 cell box-data">
                   <input id="stress" type="checkbox" v-model="stress" />
-                  <label for="stress" class="adopt">
-                    To help me (or someone in my family) cope with stress
-                  </label>
+                  <label
+                    for="stress"
+                    class="adopt"
+                  >To help me (or someone in my family) cope with stress</label>
                 </div>
                 <div class="medium-6 cell box-data">
                   <input id="caring" type="checkbox" v-model="caring" />
-                  <label for="caring" class="adopt"
-                    >For my children to learn about caring for an animal</label
-                  >
+                  <label
+                    for="caring"
+                    class="adopt"
+                  >For my children to learn about caring for an animal</label>
                 </div>
                 <div class="medium-6 cell box-data">
                   <input id="rodent" type="checkbox" v-model="rodent" />
-                  <label for="rodent" class="adopt"
-                    >To keep my house rodent free</label
-                  >
+                  <label for="rodent" class="adopt">To keep my house rodent free</label>
                 </div>
                 <div class="medium-6 cell box-data">
                   <input id="affection" type="checkbox" v-model="affection" />
